@@ -1,0 +1,20 @@
+{
+  "model": "jev-latest",
+  "decisions": {
+    "ticket-category": {
+      "type": "choice",
+      "instructions": "What is this support ticket mainly about?",
+      "criteria": {
+        "billing": "Billing, payment, charge, or refund issue",
+        "technical": "Bug, integration, or product malfunction",
+        "sales": "Pricing, purchasing, or sales enquiry",
+        "other": "None of the other categories clearly fit"
+      }
+    },
+    "is-urgent": {
+      "type": "noul",
+      "instructions": "Does this ticket communicate genuine time pressure or immediate operational impact?",
+      "threshold": 0.5
+    }
+  }
+}
