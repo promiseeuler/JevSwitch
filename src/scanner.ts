@@ -79,7 +79,7 @@ function importSources(source: ts.SourceFile): Set<string> {
     if (ts.isVariableStatement(statement)) {
       const t = statement.getText(source);
       for (const pkg of ["openai", "@anthropic-ai/sdk", "ai"]) {
-        if (t.includes(`require("\${pkg}")`) || t.includes(`require('\${pkg}')`)) sources.add(pkg);
+        if (t.includes(`require("${pkg}")`) || t.includes(`require('${pkg}')`)) sources.add(pkg);
       }
     }
   }
